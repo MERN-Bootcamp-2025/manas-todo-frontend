@@ -1,13 +1,14 @@
 
-import './App.css'
+import Login from "./pages/auth/Login";
 
 function App() {
 
   return (
+
     <div>
-      Manas
+        <Login/>
     </div>
   )
 }
 
-export default App
+export default App;
