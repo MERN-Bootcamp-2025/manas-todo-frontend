@@ -7,7 +7,8 @@ import { useDispatch } from "react-redux";
 import Input from "../../constants/Input";
 import {  loginSuccess } from "../../redux/slices/authSlice";
 import { authService } from "../../services/authService";
- 
+import { toast } from 'react-toastify'; 
+
 const Login : React.FC = () => {
     
     const [formData, setFormData] = useState({
@@ -33,11 +34,15 @@ const Login : React.FC = () => {
                 })
             );
 
+
             if(response.user.role === 'Admin'){
+                toast.success("Login successful for Admin!");
                 navigate('/admin-dashboard')
             } else if( response.user.role === 'User'){
+                toast.success('Login Successful for User!');
                 navigate('/user-dashboard')
             } else {
+                toast.error('Invalid Credentails')
                 navigate('/login')
             }
             
