@@ -34,17 +34,9 @@ const Login : React.FC = () => {
                 })
             );
 
+            toast.success('Login Successful !')
+            navigate('/tasks');
 
-            if(response.user.role === 'Admin'){
-                toast.success("Login successful for Admin!");
-                navigate('/admin-dashboard')
-            } else if( response.user.role === 'User'){
-                toast.success('Login Successful for User!');
-                navigate('/user-dashboard')
-            } else {
-                toast.error('Invalid Credentails')
-                navigate('/login')
-            }
             
         } catch (error) {
             throw new Error('Login Failed')
