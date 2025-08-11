@@ -2,24 +2,13 @@
 
 import React, { useEffect, useState } from 'react';
 import { userService } from '../services/userService';
-import { useSelector } from 'react-redux';
-import type { RootState } from '../redux/store';
 import { FiBell } from 'react-icons/fi';
 
 const NotificationsPopover: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [users, setUsers] = useState<any[]>([]);
-  const current = useSelector((s: RootState) => s.auth.user);
 
-//   const filterInvited = (list: any[]) => {
-//     const myId = current?.id;
-//     return list.filter((u: any) => {
-//       const inv = (u && (u.invited_by ?? u.invitedBy));
-//       if (!inv) return false;
-//       if (typeof inv === 'string') return inv === myId;
-//       return inv?.user_id === myId || inv?.id === myId;
-//     });
-//   };
+
 
   useEffect(() => {
     if (!open) 

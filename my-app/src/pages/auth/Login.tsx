@@ -71,7 +71,7 @@ const Login : React.FC = () => {
                     </Input>
 
                     <Input 
-                      type="text"
+                      type="password"
                       name="password"
                       label='Password' 
                       className='border-black' 
